@@ -14,10 +14,8 @@ window.addEventListener("load", () => {
             long = position.coords.longitude;
 
             console.log(lat,long);
-
-            const key = '87ab8c689ac045aa9c5134859203008';
-
-            const api = `http://api.weatherapi.com/v1/current.json?key=87ab8c689ac045aa9c5134859203008&q=${lat},${long}`
+            const proxy = 'https://cors-anywhere.herokuapp.com/'
+            const api = `${proxy}http://api.weatherapi.com/v1/current.json?key=87ab8c689ac045aa9c5134859203008&q=${lat},${long}`
             
             
             fetch(api)
@@ -42,16 +40,3 @@ window.addEventListener("load", () => {
 
     }
 });
-
-/*
- const {temp_c} = data.current;
- const {text, icon, code} = data.current.condition;
- const {name, region} = data.current.location;
-
- //set dom elements as per data fetched
- location.textContent = name;
- weather_icon.textContent = icon;
- description.textContent = text;
- temperature_c.textContent = temp_c;
- 
- */
